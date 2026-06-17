@@ -10,7 +10,12 @@ class Client(models.Model):
     scretqestion = models.CharField(max_length=50,blank=True, null=True)
     scretanswer = models.CharField(max_length=50,blank=True, null=True)
     token = models.CharField(max_length=50,blank=True, null=True)
-    AccountNUm = models.IntegerField(blank=True, null=True)
+    AccountNUm = models.CharField(
+    max_length=20,
+    blank=True,
+    null=True,
+    unique=True
+    )
     balance = models.IntegerField(blank=True, null=True)
     Bdate = models.DateField(blank=True, null=True)
     Phone = models.CharField(max_length=50,blank=True, null=True)

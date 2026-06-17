@@ -1467,6 +1467,7 @@ def funuser(request,pk):
     if request.method =='POST':
         amount=request.POST['amount']
         useid=request.POST['Account']
+        date=request.POST['date']
         dis=request.POST['dis']
         Type=request.POST['Type']
         bv = Client.objects.get(uuid=useid)
@@ -1476,7 +1477,7 @@ def funuser(request,pk):
             x = deposite.objects.create(
                 uuid=referCode(12),
                 amount=int(amount),
-                date=datetime.today(),
+                date= date or datedatetime.today(),
                 approved =True,
                 holdername = bv.user.username,
                 accountnumber=bv.AccountNUm,
@@ -1491,7 +1492,7 @@ def funuser(request,pk):
             x = deposite.objects.create(
                 uuid=referCode(12),
                 amount=int(amount),
-                date=datetime.today(),
+                date= date or datedatetime.today(),
                 disc = dis,
                 approved =True,
                 holdername = bv.user.username,
