@@ -1473,7 +1473,6 @@ def funuser(request,pk):
         bv = Client.objects.get(uuid=useid)
         if Type !="" and Type=='Credit':
             bv.balance += int(amount)
-
             x = deposite.objects.create(
                 uuid=referCode(12),
                 amount=int(amount),
