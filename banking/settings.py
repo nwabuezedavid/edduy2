@@ -24,13 +24,27 @@ SECRET_KEY = 'd(qg&phv8f!$plsl!p+r0e*_uo8o!tw(h4k!jn+g#*--5@o+*3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-EMAIL_HOST = 'hamdichtrust.com'
+# EMAIL_HOST = 'hamdichtrust.com'
 
-EMAIL_HOST_USER = "support@hamdichtrust.com" 
+# EMAIL_HOST_USER = "support@hamdichtrust.com" 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST_PASSWORD = "nwabueze666$" 
+# EMAIL_PORT = 465 
+# EMAIL_USE_SSL = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_PASSWORD = "nwabueze666$" 
-EMAIL_PORT = 465 
-EMAIL_USE_SSL = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'mail.hamdichtrust@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'itynodtoozvjkczk'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 ALLOWED_HOSTS = ["*"]
 
  
