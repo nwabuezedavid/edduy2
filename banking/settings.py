@@ -87,13 +87,20 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+import dj_database_url
+import os
 
+DATABASES = {
+    'default': dj_database_url.parse(
+        "postgresql://neondb_owner:npg_dDPFwb5vsrS2@ep-quiet-glitter-atr9fush.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require"
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -139,11 +146,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
     ]
 
-STATIC_ROOT ='/static' 
-
-MEDIA_ROOT = '/media' 
 
 
+MEDIA_ROOT = '/medias' 
+
+STATIC_ROOT = [BASE_DIR / 'staticfiles']
 
 
 
