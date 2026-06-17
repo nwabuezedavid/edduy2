@@ -150,7 +150,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = '/medias' 
 
-STATIC_ROOT = [BASE_DIR / 'staticfiles']
+STATIC_ROOT = '/staticfiles/'
 
 
 
