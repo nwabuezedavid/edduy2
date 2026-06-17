@@ -139,10 +139,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
     ]
 
-STATIC_ROOT ='home/banking/hamdichtrust.com/static' 
+STATIC_ROOT ='/static' 
 
-MEDIA_ROOT = 'home/banking/hamdichtrust.com/media' 
-
+MEDIA_ROOT = '/media' 
 
 
 
