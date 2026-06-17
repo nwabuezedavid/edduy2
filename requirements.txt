@@ -9,4 +9,5 @@ djangorestframework==3.15.1
 psycopg2-binary==2.9.10
 urlparser==0.1.2
 cycler
-djangohumanize
+
+django-humanize
