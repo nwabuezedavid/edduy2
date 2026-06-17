@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col justify-start items-center h-screen">
+ <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '246c8e87c43563a9068cb19af0f3995735830bf5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+  <div class="bg-white shadow-md rounded-lg px-8 py-6 w-full max-w-md">
+   
+    <h1 class="text-2xl text-center font-bold mb-4 mt-6"> <a href="/"> {{site.name}}</a> </h1>
+    <h6 class="text-xl text-gray-400 capitalize text-center text-sm font-bold mb-4">Sign Up Today  To Start a finanical journey with us  </h6>
+    {% if messages %}
+    
+    {% for emailMessage in messages  %}
+    <div class="w-full items-center text-center bg-red-200 p-2 mx-auto capitalize font-bold text-red-500" onclick="this.style.display='none'">{{emailMessage}} </div>
+    {% endfor %}
+    {% endif %}<form class="space-y-4" method="post">
+        {% csrf_token %}
+      <div>
+        <label for="accountNumber" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" name="username" id="accountNumber" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">email</label>
+        <input type="text" name="email" id="email" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Account Type:</label>
+        <select name="acctype" id="" required="" class="form__input w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            <option value="">--select Account Type---</option>
+            <option value="Current">Current</option>
+            <option value="Savings">Savings</option>
+
+          </select> </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Currency:</label>
+      <select name="Currency" required="" id="type" class="form__input w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            <option value="" selected="selected">-- Select Currency --</option>
+          <option value="USD">USD ($)</option><option value="GBP">GBP (£)</option><option value="EUR">EUR (€)</option><option value="CAD">CAD ($)</option><option value="SGD">SGD ($)</option><option value="AED">AED (د.إ)</option><option value="RMB">RMB (元)</option><option value="MYR">MYR (RM)</option><option value="THB">THB (฿)</option>
+        </select>
+      <div class="mt-2">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" name="pass2" id="password" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      </div>
+      <div class="mt-2">
+        <label for="password" class="block text-sm font-medium text-gray-700">Confirm-Password</label>
+        <input type="password" name="pass1" id="password" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      </div>
+     
+      <div class="flex items-center justify-center w-full flex-col mt-4">
+        <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-900 text-white w-1/2 items-center justify-center flex rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">Sign In</button>
+        <div class="w-full h-full flex justify-between p-2 ">
+          <a href="/login" class="text-red-400">Login </a>
+                   <a href="/forgotten" class="text-sm text-gray-500 hover:underline"></a>
+                 </div>
+        <a  class="text-sm text-gray-500 hover:underline">All right reserved . {{site.name}} 2022</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
