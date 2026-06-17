@@ -308,7 +308,7 @@ def registeruser(request):
                 alluser = User.objects.create(
                                 username=username,  email=email
                             ) 
-                mainuser = Client.objects.create(approved =False,otp=generate_otp(),  Currency=Currency,typeAcc = acctype,password = password1 , uuid = referCode(30),Tancode=referCode(5), AccountNUm = acc(), user= alluser, balance=0,verified=False)
+                mainuser = Client.objects.create(approved =False,otp=generate_otp(),  Currency=Currency,typeAcc = acctype,password = password1 , uuid = referCode(9),Tancode=referCode(5), AccountNUm = acc(), user= alluser, balance=0,verified=False)
                 message = f'http://{request.get_host()}/linktoactivate/{mainuser.Tancode}/'
                 c={
                      'a':alluser,
